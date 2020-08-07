@@ -67,16 +67,16 @@ svg {
   min-width: 20%;
 }
 
-.kick-pad .active {
-  background: lightblue;
+.kick-pad.active {
+  background: lightblue !important;
 }
 
-.snare-pad .active {
-  background: lightcoral;
+.snare-pad.active {
+  background: lightcoral !important;
 }
 
-.hihat-pad .active {
-  background: lightgreen;
+.hihat-pad.active {
+  background: lightgreen !important;
 }
 
 .controls button {
@@ -101,10 +101,20 @@ svg {
   background-color: grey;
   color: white;
   margin-top: 3rem;
+  cursor: pointer;
 }
 
 select {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-left: 1rem;
+}
+
+@keyframes play-track {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.15);
+  }
 }
