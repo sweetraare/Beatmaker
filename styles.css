@@ -122,3 +122,29 @@ select {
     transform: scale(1.15);
   }
 }
+
+.muted {
+  background-color: rgb(204, 204, 204) !important;
+}
+
+.tempo {
+  margin: 3rem;
+  width: 30%;
+}
+
+.tempo-slider {
+  padding: 1rem;
+  -webkit-appearance: none;
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  background-color: grey;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.tempo p {
+  font-size: 1.5rem;
+  margin: 2rem;
+  text-align: center;
+}

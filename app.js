@@ -12,6 +12,9 @@ class Drumkit {
     this.currentSnare = "./sounds/snare-acoustic01.wav";
     this.currentHihat = "./sounds/hihat-acoustic01.wav";
     this.selects = document.querySelectorAll("select");
+    this.muteButtons = document.querySelectorAll(".mute");
+    this.tempoSlider = document.querySelector(".tempo-slider");
+    this.tempoNumber = document.querySelector(".tempo-number");
   }
 
   repeat() {
@@ -67,8 +70,36 @@ class Drumkit {
   changeSound(e) {
     const selectionName = e.target.dataset.audio;
     const selectionValue = e.target.value;
-
     this[selectionName].src = selectionValue;
+  }
+
+  muteSound(e) {
+    const selectedName = e.target.dataset.track;
+    const selectedAudio = this[selectedName];
+    console.log(selectedAudio);
+
+    if (selectedAudio.muted) {
+      selectedAudio.muted = false;
+      e.target.innerHTML = `<i class="fas fa-volume-mute"></i>`;
+      e.target.classList.add("muted");
+    } else {
+      selectedAudio.muted = true;
+      e.target.innerHTML = `<i class="fas fa-volume-up"></i>`;
+      e.target.classList.remove("muted");
+    }
+  }
+
+  changeTempo(e) {
+    const tempoValue = e.target.value;
+    this.tempoNumber.innerText = tempoValue;
+    this.bpm = +tempoValue;
+  }
+  updateTempo() {
+    clearInterval(this.isPlaying);
+    this.isPlaying = null;
+    if (this.playButton.classList.contains("active")) {
+      this.start();
+    }
   }
 }
 
@@ -95,4 +126,18 @@ drumkit.selects.forEach((select) => {
   select.addEventListener("change", function (e) {
     drumkit.changeSound(e);
   });
+});
+
+drumkit.muteButtons.forEach((muteButton) => {
+  muteButton.addEventListener("click", function (e) {
+    drumkit.muteSound(e);
+  });
+});
+
+drumkit.tempoSlider.addEventListener("input", function (e) {
+  drumkit.changeTempo(e);
+});
+
+drumkit.tempoSlider.addEventListener("change", function (e) {
+  drumkit.updateTempo();
 });

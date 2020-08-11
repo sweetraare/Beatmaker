@@ -18,7 +18,7 @@
       <div class="kick-track">
         <div class="controls">
           <h1>Kick</h1>
-          <button data-track="0" class="mute kick-volume">
+          <button data-track="kickAudio" class="mute kick-volume">
             <i class="fas fa-volume-mute"></i>
           </button>
           <select name="kick-select" id="kick-select" data-audio="kickAudio">
@@ -45,7 +45,7 @@
       <div class="snare-track">
         <div class="controls">
           <h1>Snare</h1>
-          <button data-track="1" class="mute snare-volume">
+          <button data-track="snareAudio" class="mute snare-volume">
             <i class="fas fa-volume-mute"></i>
           </button>
           <select name="snare-select" id="snare-select" data-audio="snareAudio">
@@ -74,7 +74,7 @@
       <div class="hihat-track">
         <div class="controls">
           <h1>Hihat</h1>
-          <button data-track="2" class="mute hihat-volume">
+          <button data-track="hihatAudio" class="mute hihat-volume">
             <i class="fas fa-volume-mute"></i>
           </button>
           <select name="hihat-select" id="hihat-select" data-audio="hihatAudio">
@@ -102,6 +102,16 @@
         Play
         <i class="fas fa-play-circle"></i>
       </button>
+      <div class="tempo">
+        <input
+          type="range"
+          class="tempo-slider"
+          max="500"
+          min="30"
+          value="150"
+        />
+        <p>Tempo: <span class="tempo-number">150</span></p>
+      </div>
     </div>
 
     <audio class="kick-sound" src="./sounds/kick-classic.wav"></audio>
