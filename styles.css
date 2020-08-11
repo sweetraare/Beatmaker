@@ -104,6 +104,10 @@ svg {
   cursor: pointer;
 }
 
+.play.active {
+  background-color: blue;
+}
+
 select {
   padding-top: 1rem;
   padding-bottom: 1rem;
