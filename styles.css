@@ -2,11 +2,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #ff2281;
 }
 
 body {
-  font-family: serif;
+  font-family: "Red Rose";
   overflow-x: scroll;
+}
+
+body::after {
+  content: "";
+  background: url("./background.jpg") bottom center;
+  background-size: cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 i,
@@ -24,15 +38,15 @@ svg {
 }
 
 .kick-pad {
-  background: blue;
+  background: #8bc640;
 }
 
 .snare-pad {
-  background: red;
+  background: #00dee8;
 }
 
 .hihat-pad {
-  background: green;
+  background: #ff6298;
 }
 
 .kick-track,
@@ -68,22 +82,21 @@ svg {
 }
 
 .kick-pad.active {
-  background: lightblue !important;
+  background: #f5d300 !important;
 }
 
 .snare-pad.active {
-  background: lightcoral !important;
+  background: #09fbd3 !important;
 }
 
 .hihat-pad.active {
-  background: lightgreen !important;
+  background: #f353bb !important;
 }
 
 .controls button {
   padding: 1rem;
   border: none;
-  background-color: grey;
-  color: white;
+  background-color: #037a90;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -98,20 +111,23 @@ svg {
   padding: 1rem 2rem;
   font-size: 1.5rem;
   border: none;
-  background-color: grey;
+  background-color: #037a90;
   color: white;
   margin-top: 3rem;
   cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.5s ease;
 }
 
 .play.active {
-  background-color: blue;
+  background-color: #00c2ba;
 }
 
 select {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-left: 1rem;
+  color: black;
 }
 
 @keyframes play-track {
@@ -124,7 +140,7 @@ select {
 }
 
 .muted {
-  background-color: rgb(204, 204, 204) !important;
+  background-color: #07bfdfe0 !important;
 }
 
 .tempo {
@@ -138,7 +154,7 @@ select {
   margin: 1rem 0rem;
   width: 100%;
   position: relative;
-  background-color: grey;
+  background-color: #037a90;
   cursor: pointer;
   border-radius: 10px;
 }
@@ -147,4 +163,9 @@ select {
   font-size: 1.5rem;
   margin: 2rem;
   text-align: center;
+}
+
+button,
+i {
+  color: white;
 }

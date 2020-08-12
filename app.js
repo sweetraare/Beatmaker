@@ -80,12 +80,12 @@ class Drumkit {
 
     if (selectedAudio.muted) {
       selectedAudio.muted = false;
-      e.target.innerHTML = `<i class="fas fa-volume-mute"></i>`;
-      e.target.classList.add("muted");
-    } else {
-      selectedAudio.muted = true;
       e.target.innerHTML = `<i class="fas fa-volume-up"></i>`;
       e.target.classList.remove("muted");
+    } else {
+      selectedAudio.muted = true;
+      e.target.innerHTML = `<i class="fas fa-volume-mute"></i>`;
+      e.target.classList.add("muted");
     }
   }
 
